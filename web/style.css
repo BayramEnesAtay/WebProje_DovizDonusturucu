@@ -1,0 +1,116 @@
+h1 {
+    font-family: 'Bungee', sans-serif;
+    color: lightgreen;
+    text-align: center;
+  }
+
+body{
+    background-color:#163300
+}  
+
+.card {
+  border-radius: 20px;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #163300;
+  color: white;
+}
+
+/* Genel dropdown stil */
+.dropdown-menu {
+  max-height: 300px; /* Menü yüksekliği */
+  overflow-y: auto; /* Yüksekliği aşarsa kaydırma ekler */
+  width: 200px; /* Menü genişliği */
+  padding: 0;
+}
+
+/* Her bir öğenin stilini düzenleyelim */
+.dropdown-item {
+  display: flex; /* Bayrağı ve metni hizalamak için flexbox */
+  align-items: center; /* Bayrağı ve metni ortalamak için */
+  padding: 10px; /* İçerik boşluğu */
+  text-decoration: none; /* Link altı çizgisi kaldırma */
+  color: #333; /* Metin rengi */
+  transition: background-color 0.3s ease; /* Hover efekti için geçiş */
+}
+
+.dropdown-item:hover {
+  background-color: #163300;
+  color: white; /* Hover durumunda arka plan rengi */
+}
+
+/* Bayrakların boyutlandırılması */
+.dropdown-item img {
+  margin-right: 10px; /* Bayrak ile metin arasında boşluk */
+  width: 20px; /* Bayrağın genişliği */
+  height: 15px; /* Bayrağın yüksekliği */
+}
+
+/* Menü öğesinin aktif olması durumunda stil */
+.dropdown-item.active {
+  background-color: #d1e7fd;
+}
+
+.navbar.bg-body-tertiary{
+  background-color: lightgreen !important;
+}
+
+.navbar-brand{
+  color:#163300;
+  font-family: 'Patrick Hand', cursive;
+}
+
+
+
+
+#spinner-container {
+  display: none; /* Başta görünmesin */
+  position: fixed; /* Ekranda sabit dursun */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Her şeyin üstünde olsun */
+}
+
+
+#spinner {
+  width: 3rem;
+  height: 3rem;
+}
+
+.scrolling-text {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #163300;
+  color: lightgreen;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  white-space: nowrap;
+  animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.scrolling-text {
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: bold;
+}
+
+#send-alert {
+  display: none;
+}
