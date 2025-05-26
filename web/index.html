@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>DÖVİZ DÖNÜŞTÜRÜCÜ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Döviz Dönüştürücü</a>
@@ -21,7 +20,6 @@
 
   <div class="card mx-auto my-5 rounded-4 shadow w-100" style="max-width: 1200px;">
     <div class="card-body">
-
       <div id="spinner-container" style="display:none;">
         <div id="spinner" class="spinner-border text-success" role="status">
           <span class="visually-hidden">Loading...</span>
@@ -34,85 +32,79 @@
           <!-- SOL TARAF -->
           <div class="col-12 col-md-5 mb-3 mb-md-0">
             <div class="input-group">
-              <input type="number" id="fromAmount" class="form-control" placeholder="Miktar girin">
+              <input
+                type="number"
+                id="fromAmount"
+                class="form-control"
+                placeholder="Miktar girin"
+                min="0"
+                step="any"
+              />
               <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="fromCurrencyBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                <button
+                  class="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  id="fromCurrencyBtn"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <img src="https://flagcdn.com/us.svg" width="20" /> USD
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="fromCurrencyBtn">
-                  <!-- FROM para birimleri -->
-                 <li><a class="dropdown-item" href="#" onclick="selectCurrency('EUR', 'eu', 'fromCurrencyBtn')"><img src="https://flagcdn.com/eu.svg" width="20" /> EUR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('USD', 'us', 'fromCurrencyBtn')"><img src="https://flagcdn.com/us.svg" width="20" /> USD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('GBP', 'gb', 'fromCurrencyBtn')"><img src="https://flagcdn.com/gb.svg" width="20" /> GBP</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('TRY', 'tr', 'fromCurrencyBtn')"><img src="https://flagcdn.com/tr.svg" width="20" /> TRY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('AUD', 'au', 'fromCurrencyBtn')"><img src="https://flagcdn.com/au.svg" width="20" /> AUD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CAD', 'ca', 'fromCurrencyBtn')"><img src="https://flagcdn.com/ca.svg" width="20" /> CAD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CHF', 'ch', 'fromCurrencyBtn')"><img src="https://flagcdn.com/ch.svg" width="20" /> CHF</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CNY', 'cn', 'fromCurrencyBtn')"><img src="https://flagcdn.com/cn.svg" width="20" /> CNY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('INR', 'in', 'fromCurrencyBtn')"><img src="https://flagcdn.com/in.svg" width="20" /> INR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('JPY', 'jp', 'fromCurrencyBtn')"><img src="https://flagcdn.com/jp.svg" width="20" /> JPY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('MXN', 'mx', 'fromCurrencyBtn')"><img src="https://flagcdn.com/mx.svg" width="20" /> MXN</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('NZD', 'nz', 'fromCurrencyBtn')"><img src="https://flagcdn.com/nz.svg" width="20" /> NZD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('RUB', 'ru', 'fromCurrencyBtn')"><img src="https://flagcdn.com/ru.svg" width="20" /> RUB</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('ZAR', 'za', 'fromCurrencyBtn')"><img src="https://flagcdn.com/za.svg" width="20" /> ZAR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('SGD', 'sg', 'fromCurrencyBtn')"><img src="https://flagcdn.com/sg.svg" width="20" /> SGD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('KRW', 'kr', 'fromCurrencyBtn')"><img src="https://flagcdn.com/kr.svg" width="20" /> KRW</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('HKD', 'hk', 'fromCurrencyBtn')"><img src="https://flagcdn.com/hk.svg" width="20" /> HKD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('SEK', 'se', 'fromCurrencyBtn')"><img src="https://flagcdn.com/se.svg" width="20" /> SEK</a></li>
+                <ul class="dropdown-menu" aria-labelledby="fromCurrencyBtn" id="fromCurrencyList">
+                  <!-- Buraya JS ile para birimleri gelecek -->
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="col-12 col-md-2 mb-3 mb-md-0 d-flex justify-content-center align-items-center">
-            <button type="button" id="convertBtn" class="btn btn-outline-secondary">⇄</button>
+          <div
+            class="col-12 col-md-2 mb-3 mb-md-0 d-flex justify-content-center align-items-center"
+          >
+            <button type="button" id="convertBtn" class="btn btn-outline-secondary">
+              ⇄
+            </button>
           </div>
 
           <!-- SAĞ TARAF -->
           <div class="col-12 col-md-5">
             <div class="input-group">
-              <input type="number" id="toAmount" class="form-control" placeholder="Karşılığı" readonly>
+              <input
+                type="number"
+                id="toAmount"
+                class="form-control"
+                placeholder="Karşılığı"
+                readonly
+              />
               <div class="dropdown">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="toCurrencyBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                <button
+                  class="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  id="toCurrencyBtn"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   <img src="https://flagcdn.com/tr.svg" width="20" /> TRY
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="toCurrencyBtn">
-                  <!-- TO para birimleri -->
-                  <li><a class="dropdown-item" href="#" onclick="selectCurrency('EUR', 'eu', 'toCurrencyBtn')"><img src="https://flagcdn.com/eu.svg" width="20" /> EUR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('USD', 'us', 'toCurrencyBtn')"><img src="https://flagcdn.com/us.svg" width="20" /> USD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('GBP', 'gb', 'toCurrencyBtn')"><img src="https://flagcdn.com/gb.svg" width="20" /> GBP</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('TRY', 'tr', 'toCurrencyBtn')"><img src="https://flagcdn.com/tr.svg" width="20" /> TRY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('AUD', 'au', 'toCurrencyBtn')"><img src="https://flagcdn.com/au.svg" width="20" /> AUD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CAD', 'ca', 'toCurrencyBtn')"><img src="https://flagcdn.com/ca.svg" width="20" /> CAD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CHF', 'ch', 'toCurrencyBtn')"><img src="https://flagcdn.com/ch.svg" width="20" /> CHF</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('CNY', 'cn', 'toCurrencyBtn')"><img src="https://flagcdn.com/cn.svg" width="20" /> CNY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('INR', 'in', 'toCurrencyBtn')"><img src="https://flagcdn.com/in.svg" width="20" /> INR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('JPY', 'jp', 'toCurrencyBtn')"><img src="https://flagcdn.com/jp.svg" width="20" /> JPY</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('MXN', 'mx', 'toCurrencyBtn')"><img src="https://flagcdn.com/mx.svg" width="20" /> MXN</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('NZD', 'nz', 'toCurrencyBtn')"><img src="https://flagcdn.com/nz.svg" width="20" /> NZD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('RUB', 'ru', 'toCurrencyBtn')"><img src="https://flagcdn.com/ru.svg" width="20" /> RUB</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('ZAR', 'za', 'toCurrencyBtn')"><img src="https://flagcdn.com/za.svg" width="20" /> ZAR</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('SGD', 'sg', 'toCurrencyBtn')"><img src="https://flagcdn.com/sg.svg" width="20" /> SGD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('KRW', 'kr', 'toCurrencyBtn')"><img src="https://flagcdn.com/kr.svg" width="20" /> KRW</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('HKD', 'hk', 'toCurrencyBtn')"><img src="https://flagcdn.com/hk.svg" width="20" /> HKD</a></li>
-                <li><a class="dropdown-item" href="#" onclick="selectCurrency('SEK', 'se', 'toCurrencyBtn')"><img src="https://flagcdn.com/se.svg" width="20" /> SEK</a></li>
+                <ul class="dropdown-menu" aria-labelledby="toCurrencyBtn" id="toCurrencyList">
+                  <!-- Buraya JS ile para birimleri gelecek -->
                 </ul>
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="my-5">
-          <a href="javascript:void(0);" id="sendMoney" class="btn btn-success">PARA GÖNDER</a>
+          <a href="javascript:void(0);" id="sendMoney" class="btn btn-success"
+            >PARA GÖNDER</a
+          >
         </div>
-
       </div>
     </div>
   </div>
 
   <div class="scrolling-text">
-    BURAK FATİH ÖZEN - MEHMET GÖKMENOĞLU - MUHAMMED ALİ ATİK - BAYRAM ENES ATAY - MUHAMMET YASİN ALARSLAN
+    BURAK FATİH ÖZEN - MEHMET GÖKMENOĞLU - MUHAMMED ALİ ATİK - BAYRAM ENES ATAY -
+    MUHAMMET YASİN ALARSLAN
   </div>
 
   <!-- jQuery -->
@@ -123,6 +115,47 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
   <script>
+    // Para birimleri ve bayrak kodları (countryCode)
+    const currencies = [
+      { code: "USD", country: "us" },
+      { code: "EUR", country: "eu" },
+      { code: "GBP", country: "gb" },
+      { code: "TRY", country: "tr" },
+      { code: "AUD", country: "au" },
+      { code: "CAD", country: "ca" },
+      { code: "CHF", country: "ch" },
+      { code: "CNY", country: "cn" },
+      { code: "INR", country: "in" },
+      { code: "JPY", country: "jp" },
+      { code: "MXN", country: "mx" },
+      { code: "NZD", country: "nz" },
+      { code: "RUB", country: "ru" },
+      { code: "ZAR", country: "za" },
+      { code: "SGD", country: "sg" },
+      { code: "KRW", country: "kr" },
+      { code: "HKD", country: "hk" },
+      { code: "SEK", country: "se" },
+      { code: "TRY", country: "tr" },
+      { code: "BRL", country: "br" },
+    ];
+
+    // Dropdown menüyü oluştur
+    function buildCurrencyList() {
+      const fromList = $("#fromCurrencyList");
+      const toList = $("#toCurrencyList");
+
+      fromList.empty();
+      toList.empty();
+
+      currencies.forEach(({ code, country }) => {
+        const item = <li><a class="dropdown-item" href="#" onclick="selectCurrency('${code}', '${country}', 'fromCurrencyBtn')"><img src="https://flagcdn.com/${country}.svg" width="20" /> ${code}</a></li>;
+        const itemTo = <li><a class="dropdown-item" href="#" onclick="selectCurrency('${code}', '${country}', 'toCurrencyBtn')"><img src="https://flagcdn.com/${country}.svg" width="20" /> ${code}</a></li>;
+
+        fromList.append(item);
+        toList.append(itemTo);
+      });
+    }
+
     function convertCurrency() {
       const fromCurrency = $("#fromCurrencyBtn").text().trim().slice(-3);
       const toCurrency = $("#toCurrencyBtn").text().trim().slice(-3);
@@ -142,18 +175,22 @@
 
     function selectCurrency(currencyCode, countryCode, buttonId) {
       var flagUrl = "https://flagcdn.com/" + countryCode + ".svg";
-      $("#" + buttonId).html('<img src="' + flagUrl + '" width="20" /> ' + currencyCode);
-      convertCurrency(); // Yeni eklenen: para birimi değişince hesaplama yap
+      $("#" + buttonId).html(
+        '<img src="' + flagUrl + '" width="20" /> ' + currencyCode
+      );
+      convertCurrency(); // seçince hemen dönüştür
     }
 
     $(document).ready(function () {
+      buildCurrencyList();
+
       $("#fromAmount").on("input", convertCurrency);
 
       $("#convertBtn").on("click", function () {
         $("#spinner-container").show();
         setTimeout(() => $("#spinner-container").hide(), 500);
 
-        // Para birimlerini ve bayrakları değiştir
+        // Para birimlerini değiştir
         const fromText = $("#fromCurrencyBtn").html();
         const toText = $("#toCurrencyBtn").html();
         $("#fromCurrencyBtn").html(toText);
@@ -162,16 +199,14 @@
         const fromAmount = parseFloat($("#fromAmount").val());
         const toAmount = parseFloat($("#toAmount").val());
 
-        if (!isNaN(toAmount)) {
-          $("#fromAmount").val(toAmount);
-          $("#toAmount").val(fromAmount);
-        }
+        $("#fromAmount").val(toAmount);
+        $("#toAmount").val(fromAmount);
 
-        convertCurrency(); // dönüşüm sonrası güncelle
+        convertCurrency();
       });
 
-      $("#sendMoney").on("click", function () {
-        alert("Bu özellik geçici olarak devre dışıdır.");
+      $("#sendMoney").click(function () {
+        alert("Para gönderme işlemi henüz aktif değildir.");
       });
     });
   </script>
